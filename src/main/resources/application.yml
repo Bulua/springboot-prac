@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/springboot?serverTimezone=GMT
+    username: root
+    password: 134679
+    driver-class-name: com.mysql.jdbc.Driver
+  thymeleaf:
+    # 关闭thymeleaf缓存
+    cache: false
+
+mybatis:
+  # 定义mapper文件路径
+  # mybatis下不能将configuration和mybatis-config.xml同时设定，否则会报错
+  # config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  configuration:
+    # 开启驼峰命名法
+    map-underscore-to-camel-case: true
+  # 给指定包定义别名
+  type-aliases-package: cn.edu.aynu.SpringBoot.entity
+  # 指定类型转换包
+  type-handlers-package: cn.edu.aynu.SpringBoot.typehandler
+# debug: true
